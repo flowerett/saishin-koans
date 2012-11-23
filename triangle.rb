@@ -23,6 +23,9 @@ def triangle(a, b, c)
   # end
 
   #better
+  a, b, c = [a, b, c].sort
+  raise TriangleError if (a + b) <= c
+
   sides = [a, b, c].uniq
   [nil, :equilateral, :isosceles, :scalene][sides.size]
 end
